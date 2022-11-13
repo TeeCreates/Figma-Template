@@ -117,7 +117,7 @@ const Icons = styled.img`
   }
 `;
 
-const TabLinks = styled.a`
+const TabLinks = styled.span`
   text-decoration: none;
   color: black;
   :hover {

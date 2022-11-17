@@ -4,11 +4,17 @@ import SideBar from "./SideBar";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import { Fragment } from "react";
+import { Header } from "./Header";
 function App() {
   return (
     <Fragment>
       <GlobalStyle />
-      <SideBar />
+      <Content>
+        <SideBar />
+        <div>
+          <Header />
+        </div>
+      </Content>
     </Fragment>
   );
 }
@@ -16,6 +22,5 @@ function App() {
 export default App;
 
 const Content = styled.div`
-  background-color: lightblue;
-  padding: 10px;
+  display: flex;
 `;

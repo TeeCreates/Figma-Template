@@ -11,30 +11,36 @@ import logo from "./assets/logo.png";
 const SideBar = () => {
   return (
     <SideBarStyled>
-      <Logo src={logo} alt="" />
+      <div>
+        <Logo src={logo} alt="" />
 
-      <Button>
-        <Icons src={dashboard} alt="dashboard" />
+        <Button>
+          <Icons src={dashboard} alt="dashboard" />
 
-        <TabLinks>Dashboard</TabLinks>
-      </Button>
-      <Button>
-        <Icons src={medalStar}></Icons>
+          <TabLinks>Dashboard</TabLinks>
+        </Button>
+        <Button>
+          <Icons src={medalStar}></Icons>
 
-        <TabLinks>Apprenterships</TabLinks>
-      </Button>
-      <Button>
-        <Icons src={book} alt="book" />
-        <TabLinks>Internship</TabLinks>
-      </Button>
-      <Button>
-        <Icons src={briefcase} alt="briefcase" />
-        <TabLinks>Jobs</TabLinks>
-      </Button>
-      <Button>
-        <Icons src={setting} alt="setting icon" />
-        <TabLinks>Settings</TabLinks>
-      </Button>
+          <TabLinks>Apprenterships</TabLinks>
+        </Button>
+        <Button>
+          <Icons src={book} alt="book" />
+          <TabLinks>Internship</TabLinks>
+        </Button>
+        <Button>
+          <Icons src={briefcase} alt="briefcase" />
+          <TabLinks>Jobs</TabLinks>
+        </Button>
+        <Button>
+          <Icons src={setting} alt="setting icon" />
+          <TabLinks>Settings</TabLinks>
+        </Button>
+      </div>
+      <UserDetails>
+        <UserIcon></UserIcon>
+        <div>Adam Scott</div>
+      </UserDetails>
     </SideBarStyled>
   );
 };
@@ -44,20 +50,29 @@ export default SideBar;
 const SideBarStyled = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
+  justify-content: space-between;
   width: auto;
   background-color: white;
   border-radius: 20px;
   width: fit-content;
-  padding: 20px;
-  height: 98vh;
+  padding: 25px;
+  height: 90vh;
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 380px;
+  }
 `;
 
 const Logo = styled.img`
   height: 32px;
   width: 160px;
   margin-bottom: 30px;
+  @media (max-width: 400px) {
+    width: 90vw;
+  }
 `;
 
 const Button = styled.button`
@@ -66,6 +81,7 @@ const Button = styled.button`
   align-items: center;
   margin: 10px;
   width: 100%;
+  cursor: pointer;
 
   :hover {
     background-color: #665fef33;
@@ -76,6 +92,8 @@ const Button = styled.button`
     stroke: #793ef5;
     fill: #793ef5;
     color: #793ef5;
+  }
+  @media (max-width: 400px) {
   }
 `;
 
@@ -95,6 +113,24 @@ const TabLinks = styled.span`
   :hover {
     color: #793ef5;
   }
+  @media (max-width: 400px) {
+    display: none;
+  }
+`;
+
+const UserDetails = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -20px;
+`;
+
+const UserIcon = styled.div`
+  height: 40px;
+  width: 40px;
+  background-color: #e2e6eb;
+  border-radius: 30px;
+  margin-right: 15px;
 `;
 
 // const IconSvg = styled.svg`

@@ -5,15 +5,17 @@ import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import { Fragment } from "react";
 import { Header } from "./Header";
+import { InternshipInsights } from "./InternshipInsights";
 function App() {
   return (
     <Fragment>
       <GlobalStyle />
       <Content>
         <SideBar />
-        <div>
+        <InsightsDiv>
           <Header />
-        </div>
+          <InternshipInsights />
+        </InsightsDiv>
       </Content>
     </Fragment>
   );
@@ -23,4 +25,9 @@ export default App;
 
 const Content = styled.div`
   display: flex;
+`;
+
+const InsightsDiv = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
